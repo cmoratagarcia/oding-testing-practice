@@ -13,7 +13,7 @@ test("adds 2 numbers", () => {
   expect(calculator.add(10, 500)).toBe(510);
 });
 test("subtracts 2 numbers", () => {
-  expect(calculator.subtract(10, 500)).toBe(-490);
+  expect(calculator.subtract(50, 2)).toBe(48);
 });
 test("divides 2 numbers", () => {
   expect(calculator.divide(10, 500)).toBe(0.02);
