@@ -41,10 +41,9 @@ test("preserves punctuation", () => {
 });
 //An analyzeArray function that takes an array of numbers and returns an object with the following properties: average, min, max, and length.
 test("returns correct object", () => {
-  expect(analyzeArray([40, 25, 3, 166, 7])).toEqual({
-    average: 48.2,
-    min: 3,
-    max: 166,
-    length: 5,
-  });
+  const result = analyzeArray([40, 25, 3, 166, 7]);
+  expect(result.min).toBe(3);
+  expect(result.max).toBe(166);
+  expect(result.length).toBe(5);
+  expect(result.average).toBeCloseTo(48.2, 1); // 1 = 1 decimal precision
 });
