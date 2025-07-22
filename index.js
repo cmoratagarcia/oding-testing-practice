@@ -48,11 +48,26 @@ function caesarCipher(str, factor) {
 
   return encryptedStr;
 }
+
+function analyzeArray(array) {
+  let sortedArr = array.sort((a, b) => a - b);
+  let aggregate = 0;
+  for (let i = 0; i < array.length; i++) {
+    aggregate += array[i];
+  }
+  const results = {
+    min: sortedArr[0],
+    max: sortedArr[array.length - 1],
+    length: array.length,
+    average: aggregate / array.length,
+  };
+  return results;
+}
+
 module.exports = {
   capitalize,
   reverseString,
   calculator,
   caesarCipher,
+  analyzeArray,
 };
-
-console.log(caesarCipher("Hello", 3));
