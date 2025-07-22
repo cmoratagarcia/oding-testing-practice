@@ -50,14 +50,11 @@ function caesarCipher(str, factor) {
 }
 
 function analyzeArray(array) {
-  let sortedArr = array.sort((a, b) => a - b);
-  let aggregate = 0;
-  for (let i = 0; i < array.length; i++) {
-    aggregate += array[i];
-  }
+  const aggregate = array.reduce((total, val) => total + val, 0);
+
   const results = {
-    min: sortedArr[0],
-    max: sortedArr[array.length - 1],
+    min: Math.min(...array),
+    max: Math.max(...array),
     length: array.length,
     average: aggregate / array.length,
   };
