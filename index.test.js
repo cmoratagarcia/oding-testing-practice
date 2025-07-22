@@ -28,6 +28,15 @@ test("multiplies 2 numbers", () => {
 });
 //A caesarCipher function that takes a string and a shift factor and returns it with each character “shifted”.
 test("shifts characters by factor", () => {
+  expect(caesarCipher("hello", 3)).toBe("khoor");
+});
+test("wraps from z to a", () => {
+  expect(caesarCipher("xyz", 3)).toBe("abc");
+});
+test("preserves case", () => {
+  expect(caesarCipher("HeLLo", 3)).toBe("KhOOr");
+});
+test("preserves punctuation", () => {
   expect(caesarCipher("Hello, World!", 3)).toBe("Khoor, Zruog!");
 });
 //An analyzeArray function that takes an array of numbers and returns an object with the following properties: average, min, max, and length.
