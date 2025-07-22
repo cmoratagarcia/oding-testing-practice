@@ -21,27 +21,28 @@ const calculator = {
   },
 };
 
-function caesarCipher(string, factor) {
+function caesarCipher(str, factor) {
   const lowers = "abcdefghijklmnopqrstuvwxyz";
   const uppers = lowers.toUpperCase();
-  let encryptedStr = "";
-  let index = 0;
-  let encryptedChar = "";
 
-  for (let i = 0; i < string.length; i++) {
-    if (lowers.indexOf(string.charAt(i)) !== -1) {
-      index = lowers.indexOf(string.charAt(i));
-      if (index + factor >= lowers.length) {
-        encryptedChar = lowers.charAt(index + factor - lowers.length);
-      } else {
-        encryptedChar = lowers.charAt(index + factor);
-      }
-      encryptedStr += encryptedChar;
-    } else if (uppers.indexOf(string.charAt(i)) !== -1) {
-      index = uppers.indexOf(string.charAt(i));
-      encryptedStr += uppers.charAt(index + factor);
+  // Helper function to shift a character within a given alphabet
+  function shiftChar(char, alphabet) {
+    const index = alphabet.indexOf(char);
+    if (index === -1) return char; // not in alphabet
+    // Use modulo to wrap around the alphabet
+    const shiftedIndex = (index + factor) % 26;
+    return alphabet[(shiftedIndex + 26) % 26]; // handle negative shifts
+  }
+
+  let encryptedStr = "";
+
+  for (let char of str) {
+    if (lowers.includes(char)) {
+      encryptedStr += shiftChar(char, lowers);
+    } else if (uppers.includes(char)) {
+      encryptedStr += shiftChar(char, uppers);
     } else {
-      encryptedStr += string.charAt(i);
+      encryptedStr += char;
     }
   }
 
