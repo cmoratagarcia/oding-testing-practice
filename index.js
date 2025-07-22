@@ -26,11 +26,17 @@ function caesarCipher(string, factor) {
   const uppers = lowers.toUpperCase();
   let encryptedStr = "";
   let index = 0;
+  let encryptedChar = "";
 
   for (let i = 0; i < string.length; i++) {
     if (lowers.indexOf(string.charAt(i)) !== -1) {
       index = lowers.indexOf(string.charAt(i));
-      encryptedStr += lowers.charAt(index + factor);
+      if (index + factor >= lowers.length) {
+        encryptedChar = lowers.charAt(index + factor - lowers.length);
+      } else {
+        encryptedChar = lowers.charAt(index + factor);
+      }
+      encryptedStr += encryptedChar;
     } else if (uppers.indexOf(string.charAt(i)) !== -1) {
       index = uppers.indexOf(string.charAt(i));
       encryptedStr += uppers.charAt(index + factor);
