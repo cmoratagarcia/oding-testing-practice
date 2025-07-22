@@ -10,10 +10,10 @@ test("reverses string", () => {
 });
 //A calculator object that contains functions for the basic operations: add, subtract, divide, and multiply. Each of these functions should take two numbers and return the correct calculation.
 test("adds 2 numbers", () => {
-  expect(calculator.add(10, 500)).toBe(600);
+  expect(calculator.add(10, 500)).toBe(510);
 });
 test("subtracts 2 numbers", () => {
-  expect(calculator.subtract(10, 500)).toBe(-400);
+  expect(calculator.subtract(10, 500)).toBe(-490);
 });
 test("divides 2 numbers", () => {
   expect(calculator.divide(10, 500)).toBe(0.02);
