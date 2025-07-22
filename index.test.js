@@ -6,7 +6,7 @@ test("capitalizes first character", () => {
 
 //A reverseString function that takes a string and returns it reversed.
 test("reverses string", () => {
-  expect(reverseString("abcdef")).toBe("fedcba");
+  expect(reverseString("abCdef")).toBe("fedCba");
 });
 //A calculator object that contains functions for the basic operations: add, subtract, divide, and multiply. Each of these functions should take two numbers and return the correct calculation.
 
