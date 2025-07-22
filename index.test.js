@@ -1,4 +1,9 @@
-const { capitalize, reverseString, calculator } = require("./index.js");
+const {
+  capitalize,
+  reverseString,
+  calculator,
+  caesarCipher,
+} = require("./index.js");
 //A capitalize function that takes a string and returns it with the first character capitalized.
 test("capitalizes first character", () => {
   expect(capitalize("abcdef")).toBe("Abcdef");
@@ -22,5 +27,7 @@ test("multiplies 2 numbers", () => {
   expect(calculator.multiply(10, 500)).toBe(5000);
 });
 //A caesarCipher function that takes a string and a shift factor and returns it with each character “shifted”.
-
+test("shifts characters by factor", () => {
+  expect(caesarCipher("Hello, World!", 3)).toBe("Khoor, Zruog!");
+});
 //An analyzeArray function that takes an array of numbers and returns an object with the following properties: average, min, max, and length.
