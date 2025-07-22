@@ -40,3 +40,11 @@ test("preserves punctuation", () => {
   expect(caesarCipher("Hello, World!", 3)).toBe("Khoor, Zruog!");
 });
 //An analyzeArray function that takes an array of numbers and returns an object with the following properties: average, min, max, and length.
+test("returns correct object", () => {
+  expect(analyzeArray([40, 25, 3, 166, 7])).toEqual({
+    average: 48.2,
+    min: 3,
+    max: 166,
+    length: 5,
+  });
+});
